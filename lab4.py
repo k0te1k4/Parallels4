@@ -48,6 +48,7 @@ class WindowImage:
 
     def show(self, name, img):
         cv2.imshow(name, img)
+        time.sleep(self._delay)
         
     def __del__(self):
         cv2.destroyAllWindows()
