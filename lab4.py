@@ -33,6 +33,8 @@ class SensorCam:
         
     def get(self):
         ret, frame = self._cap.read()
+        if ret == False:
+            logging.error(Exception('Camera not available'))
         frame = cv2.resize(frame, self._resolution)
         return frame
 
